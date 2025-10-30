@@ -82,7 +82,7 @@ void Chicken::Cluck()
 ```
 
 Having Farm depend on Chicken and Chicken depend on Farm is what is called a circular dependency.  
-Circular dependencies are not inherently bad (I personally don't like them but that's a personal opinion) the problem is that they can augment exponentially the number of classes that need to be checked/tested/fixed if one of the classes changes.  
+Circular dependencies are very bad. The main problem is that they can augment exponentially the number of classes that need to be checked/tested/fixed if one of the classes changes. Additionally depending on how you write your `#include` statements your compilation may even fail.  
 Following with the example above, if `Farm::AnnounceIClucked()` changes and takes more parameters, `Chicken::Cluck()` is forced to change to acomodate that.
 
 ### CDSU in Practice
@@ -151,12 +151,4 @@ The chicken tells its dependents "You want to know when I want to register? You 
 
 ---
 
-## Now Jump into the code
-
-Read the following files in this order: // TODO need to fill this list
-
-1. a
-
----
-
-## Do NOT Read This Until You Have Gone Through the Code
+Now you can jump into the code
